@@ -33,4 +33,6 @@ class Owner
     end
   end
 
+def self.owner.reset_all 
+  self.reset_all
 end
