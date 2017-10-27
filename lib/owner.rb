@@ -26,7 +26,7 @@ class Owner
 
   def say_species
     "I am a #{@species}."
-  end 
+  end
 
   def name
     @name
@@ -52,4 +52,19 @@ class Owner
       dogs.mood = "happy"
     end
   end
+
+def play_with_cats
 end
+
+def feed_fish
+end 
+
+def sell_pets
+end
+
+def list_pets
+  "I have #{@pets[:fishes].size}, #{@pets[:dogs].size}, and #{@pets[:cats].size}."
+end 
+  
+end
+
