@@ -1,6 +1,5 @@
 class Owner
-
-  attr_accessor :owner, :pets
+  attr_accessor :pets, :name
   attr_reader :species
 
   @@all = []
@@ -32,50 +31,49 @@ class Owner
     @name
   end
 
+  def buy_fish(name)
+      new_fish = Fish.new(name)
+      @pets[:fishes] << new_fish
+  end
+
   def buy_cat(name)
-    new_kitty = Cat.new(name)
-    @pets[:cats] << new_kitty
+    new_cat = Cat.new(name)
+    @pets[:cats] << new_cat
   end
 
   def buy_dog(name)
-    new_puppy = Dog.new(name)
-    @pets[:dogs] << new_puppy
-  end
-
-  def buy_fish(name)
-    new_fish = Fish.new(name)
-    @pets[:fishes] << new_fish
+    new_dog = Dog.new(name)
+    @pets[:dogs] << new_dog
   end
 
   def walk_dogs
-    @pets[:dogs].each do |dogs|
-      dogs.mood = "happy"
+    @pets[:dogs].each do |dog|
+      dog.mood = "happy"
     end
   end
 
-def play_with_cats
-  @pets[:cats].each do |cat|
-    cat.mood = "happy"
+  def play_with_cats
+    @pets[:cats].each do |cat|
+      cat.mood = "happy"
+    end
   end
-end 
 
-def feed_fish
-  @pets[:fishes].each do |fish|
-    fish.mood = "happy"
+  def feed_fish
+    @pets[:fishes].each do |fish|
+      fish.mood = "happy"
+    end
   end
-end
 
-def sell_pets
-  @pets.each do |species, animals|
+  def sell_pets
+    @pets.each do |species, animals|
     animals.each do |animal|
     animal.mood = "nervous"
     end
       animals.clear
+    end
   end
-end
 
-def list_pets
-  "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog(s), and #{@pets[:cats].size} cat(s)."
-end
-
+  def list_pets
+    "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog(s), and #{@pets[:cats].size} cat(s)."
+  end
 end
