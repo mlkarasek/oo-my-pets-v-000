@@ -18,6 +18,7 @@ class Owner
 
   def self.count
     @@all.count
+  end
 
   def buy_cat(name)
     new_kitty = Cat.new(name)
