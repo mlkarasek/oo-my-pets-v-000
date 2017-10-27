@@ -12,6 +12,10 @@ class Owner
     @@all << self
   end
 
+  def self.owner.reset_all
+    self.clear 
+  end
+
   def buy_cat(name)
     new_kitty = Cat.new(name)
     @pets[:cats] << new_kitty
@@ -33,6 +37,4 @@ class Owner
     end
   end
 
-def self.owner.reset_all 
-  self.reset_all
-end
+
