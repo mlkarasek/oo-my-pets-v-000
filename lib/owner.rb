@@ -57,14 +57,19 @@ def play_with_cats
 end
 
 def feed_fish
-end 
+end
 
 def sell_pets
+  @pets.each do |species, animals|
+    animals.each do |animal|
+    animal.mood = "nervous"
+    end
+      animals.clear
+  end
 end
 
 def list_pets
   "I have #{@pets[:fishes].size}, #{@pets[:dogs].size}, and #{@pets[:cats].size}."
-end 
-  
 end
 
+end
