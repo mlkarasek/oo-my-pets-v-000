@@ -13,8 +13,11 @@ class Owner
   end
 
   def self.owner.reset_all
-    self.clear 
+    @all.clear 
   end
+
+  def self.count
+    @@all.count
 
   def buy_cat(name)
     new_kitty = Cat.new(name)
